@@ -7,3 +7,8 @@ bootstrap:
 
   js:
     js/boostrap.min.js: {} 
+
+global:
+  css:
+    theme:
+      css/global.css: {}

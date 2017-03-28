@@ -1,31 +1,26 @@
 name: Reboot
 type: theme
-description: A demo theme created with Drupal Console based on Bootstrap
+description: A demo theme created based on Bootstrap
 package: Other
 core: 8.x
-libraries:
-  - reboot/global-styling
-  - reboot/bootstrap
+base theme: classy
 
-base theme: bartik
-
+# Default set of regions.
 regions:
-  header: Header
+  header: 'Header'
   primary_menu: 'Primary menu'
   secondary_menu: 'Secondary menu'
   page_top: 'Page top'
   page_bottom: 'Page bottom'
-  highlighted: Highlighted
+  highlighted: 'Highlighted'
   featured_top: 'Featured top'
-  breadcrumb: Breadcrumb
-  content: Content
-  sidebar_first: 'Sidebar first'
-  sidebar_second: 'Sidebar second'
-  featured_bottom_first: 'Featured bottom first'
-  featured_bottom_second: 'Featured bottom second'
-  featured_bottom_third: 'Featured bottom third'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  sidebar_first: 'Left sidebar'
+  sidebar_second: 'Right sidebar'
   footer_first: 'Footer first'
   footer_second: 'Footer second'
-  footer_third: 'Footer third'
-  footer_fourth: 'Footer fourth'
-  footer_fifth: 'Footer fifth'
+
+libraries:
+  - reboot/global
+  - reboot/bootstrap

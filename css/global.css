@@ -1,0 +1,7 @@
+/* Theme specific CSS rules */
+
+.node--type-article .field--type-image img {
+  height: auto;
+  min-width: 100%;
+  width: 100%;
+}
