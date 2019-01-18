@@ -1,10 +1,10 @@
 bootstrap:
   css:
     theme:
-      css/bootstrap-theme.min.css: {}
+      css/bootstrap.min.css: {}
 
   js:
-    js/boostrap.min.js: {} 
+    js/bootstrap.min.js: {} 
 
 global:
   css:
