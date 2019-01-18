@@ -1,7 +1,5 @@
 bootstrap:
   css:
-    base:
-      css/bootstrap.min.css: {}
     theme:
       css/bootstrap-theme.min.css: {}
 
