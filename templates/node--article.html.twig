@@ -62,6 +62,7 @@
  *   current user is a logged-in member.
  * - is_admin: Flag for admin user status. Will be true when the current user
  *   is an administrator.
+ * - today: Today's date and time.
  *
  * @see template_preprocess_node()
  *
@@ -72,17 +73,19 @@
 #}
 {%
 set classes = [
-'node',
-'node--type-' ~ node.bundle|clean_class,
-node.isPromoted() ? 'node--promoted',
-node.isSticky() ? 'node--sticky',
-not node.isPublished() ? 'node--unpublished',
-view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 ]
 %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-
+{% if not node.isPublished() %} 
+  <div class="alert alert-warning">{{ "This node is not published"|t }}</div>
+{% endif %}
   {{ title_prefix }}
   {% if not page %}
     <h2{{ title_attributes }}>
@@ -90,12 +93,6 @@ view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     </h2>
   {% endif %}
   {{ title_suffix }}
-
-  {% if not node.isPublished() %}
-    <div class="label label-warning">{{ "This node is not published"|t }}</div>
-  {% endif %}
-
-  {% trans %}The current time is: {{ today }}{% endtrans %}
 
   {% if display_submitted %}
     <footer class="node__meta">
@@ -107,14 +104,11 @@ view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     </footer>
   {% endif %}
 
-  <div{{ content_attributes.addClass('node__content', 'row') }}>
-    {%  if content.field_image %}
-      <div class="col-md-8">{{ content|without('field_image') }}</div>
-      <div class="col-md-4">{{ content.field_image }}</div>
-
-    {% else %}
-      {{ content}}
-    {% endif %}
+  <div class="row jumbotron align-middle d-flex justify-content-center">
+    {{ content.field_image }}
   </div>
-
+  <div{{ content_attributes.addClass('node__content', 'row') }}>
+    {{ content|without('field_image') }}
+  </div>
+  {% trans %}The current time is: {{ today }}{% endtrans %}
 </article>
