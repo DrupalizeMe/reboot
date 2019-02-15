@@ -22,5 +22,5 @@ regions:
   footer_second: 'Footer second'
 
 libraries:
-  - reboot/global
   - reboot/bootstrap
+  - reboot/global
