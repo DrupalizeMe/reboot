@@ -2,7 +2,9 @@ name: Reboot
 type: theme
 description: A demo theme created based on Bootstrap
 package: Other
-core: 8.x
+core_version_requirement: ^8 || ^9
+# Required if you want to support <= 8.7.7
+# core: 8.x
 base theme: classy
 
 # Default set of regions.
