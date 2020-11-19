@@ -45,7 +45,7 @@
 #}
 <div class="container">
 
-  <header role="banner" class="row page-header">
+  <header role="banner" class="row pb-2 mt-4 mb-2 border-bottom page-header">
     {{ page.header }}
   </header>
 
@@ -59,28 +59,30 @@
   </div>
 
   <div class="row jumbotron">
-  {{ page.highlighted }}
+    {{ page.featured_top }}
   </div>
 
-  <div class="row">
-    <main role="main">
-      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+  <div class="row mt-2 mb-2 pl-2">
+    {{ page.highlighted }}
+  </div>
 
-      <div class="col-md-8">
+  <main role="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    <div class="row">
+      <div class="col-md-6">
         {{ page.help }}
         {{ page.content }}
       </div>
-
-      <aside class="layout-sidebar-first col-md-2" role="complementary">
+      
+      <aside class="layout-sidebar-first col-md-3" role="complementary">
         {{ page.sidebar_first }}
       </aside>
-
-      <aside class="layout-sidebar-second col-md-2" role="complementary">
+      
+      <aside class="layout-sidebar-second col-md-3" role="complementary">
         {{ page.sidebar_second }}
       </aside>
-
-    </main>
-  </div>
+    </div>
+  </main>
 
   <footer role="contentinfo" class="row">
     <div class="col-md-6">{{ page.footer_first }}</div>
