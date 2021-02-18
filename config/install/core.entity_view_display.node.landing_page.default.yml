@@ -1,0 +1,135 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.landing_page.field_call_to_action
+    - field.field.node.landing_page.field_call_to_action_link
+    - field.field.node.landing_page.field_hero_image
+    - field.field.node.landing_page.field_landing_page_body
+    - field.field.node.landing_page.field_slides
+    - node.type.landing_page
+  module:
+    - ctools
+    - layout_builder
+    - layout_discovery
+    - link
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: hero
+        components:
+          87973735-ed77-497e-9d25-bd1ff36f3be9:
+            uuid: 87973735-ed77-497e-9d25-bd1ff36f3be9
+            region: content
+            configuration:
+              id: 'entity_view:node'
+              label: 'Slides - Entity view (Content)'
+              provider: ctools
+              label_display: '0'
+              view_mode: hero
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: content
+          column_widths: 75-25
+        components:
+          46fb3438-11b2-41b5-b855-594c4f703768:
+            uuid: 46fb3438-11b2-41b5-b855-594c4f703768
+            region: first
+            configuration:
+              id: 'field_block:node:landing_page:field_landing_page_body'
+              label: Body
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -8
+          91c9e076-53d7-425c-b268-df1ceb49f253:
+            uuid: 91c9e076-53d7-425c-b268-df1ceb49f253
+            region: second
+            configuration:
+              id: 'entity_view:node'
+              label: 'Call to Action - Entity view (Content)'
+              provider: ctools
+              label_display: '0'
+              view_mode: call_to_action
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+id: node.landing_page.default
+targetEntityType: node
+bundle: landing_page
+mode: default
+content:
+  field_call_to_action:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_call_to_action_link:
+    weight: 103
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_hero_image:
+    type: entity_reference_entity_view
+    weight: 106
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_landing_page_body:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_slides:
+    type: entity_reference_entity_view
+    weight: 104
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

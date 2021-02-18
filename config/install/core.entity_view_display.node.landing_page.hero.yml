@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.hero
+    - field.field.node.landing_page.field_call_to_action
+    - field.field.node.landing_page.field_call_to_action_link
+    - field.field.node.landing_page.field_hero_image
+    - field.field.node.landing_page.field_landing_page_body
+    - field.field.node.landing_page.field_slides
+    - node.type.landing_page
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.landing_page.hero
+targetEntityType: node
+bundle: landing_page
+mode: hero
+content:
+  field_hero_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+hidden:
+  field_call_to_action: true
+  field_call_to_action_link: true
+  field_landing_page_body: true
+  field_slides: true
+  links: true

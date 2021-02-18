@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.call_to_action
+    - field.field.node.landing_page.field_call_to_action
+    - field.field.node.landing_page.field_call_to_action_link
+    - field.field.node.landing_page.field_hero_image
+    - field.field.node.landing_page.field_landing_page_body
+    - field.field.node.landing_page.field_slides
+    - node.type.landing_page
+  module:
+    - layout_builder
+    - link
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.landing_page.call_to_action
+targetEntityType: node
+bundle: landing_page
+mode: call_to_action
+content:
+  field_call_to_action:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_call_to_action_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  field_hero_image: true
+  field_landing_page_body: true
+  field_slides: true
+  links: true
