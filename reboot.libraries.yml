@@ -1,12 +1,21 @@
 bootstrap:
   css:
-    theme:
-      css/bootstrap.min.css: {}
-
+    layout:
+      css/bootstrap/bootstrap.min.css: {weight: -20}
   js:
-    js/bootstrap.min.js: {} 
+    js/bootstrap.min.js: {minified: true}
 
 global:
   css:
     theme:
       css/global.css: {}
+
+node.cta:
+  css:
+    component:
+      templates/components/cta/cta.css: {}
+
+node.hero:
+  css:
+    component:
+      templates/components/hero/hero.css: {}
