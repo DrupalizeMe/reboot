@@ -16,7 +16,7 @@ function reboot_preprocess_node(array &$variables) {
 }
 
 /**
- * Implements hook_theme_suggesetions_HOOK_alter().
+ * Implements hook_theme_suggestions_HOOK_alter().
  */
 function reboot_theme_suggestions_node_alter(array &$suggestions, array $variables) {
   $logged_in = \Drupal::currentUser()->isAuthenticated();
