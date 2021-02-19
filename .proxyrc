@@ -1,0 +1,8 @@
+{
+  "**": {
+    "target": "https://theming-9x-workshop.ddev.site",
+    "changeOrigin": true,
+    "xfwd": true,
+    "secure": false
+  }
+}

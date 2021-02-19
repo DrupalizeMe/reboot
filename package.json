@@ -1,0 +1,23 @@
+{
+  "name": "reboot",
+  "description": "This repository contains demo code used during the [Drupalize.Me](https://drupalize.me) *Theming Drupal 8* workshop.",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrupalizeMe/reboot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DrupalizeMe/reboot/issues"
+  },
+  "homepage": "https://github.com/DrupalizeMe/reboot#readme",
+  "devDependencies": {
+    "parcel": "^2.0.0-beta.1",
+    "sass": "^1.32.8"
+  },
+  "scripts": {
+    "build": "parcel build scss/styles.scss js/typescript-example/index.ts",
+    "dev": "parcel serve scss/styles.scss js/typescript-example/index.ts"
+  }
+}

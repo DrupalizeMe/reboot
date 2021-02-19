@@ -9,6 +9,9 @@ global:
   css:
     theme:
       css/global.css: {}
+      dist/scss/styles.css: {}
+  js:
+    dist/js/typescript-example/index.js: {}
 
 node.cta:
   css:
