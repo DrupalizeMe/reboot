@@ -19,3 +19,10 @@ node.hero:
   css:
     component:
       templates/components/hero/hero.css: {}
+
+component.button:
+  css:
+    component:
+      templates/components/button/button.css: {}
+  js:
+    templates/components/button/button.js: {}

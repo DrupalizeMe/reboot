@@ -1,0 +1,28 @@
+.button {
+  margin: .4em;
+  padding: 1em;
+  cursor: pointer;
+  background: #0c97ed;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.button:hover {
+  text-decoration: none;
+  color: #ffffff;
+  transition-duration: 0.2s;
+  transition-property: box-shadow;
+  box-shadow: 2px 2px 2px #052f48;
+}
+
+.button--small {
+  font-size: 0.75em;
+}
+
+.button--medium {
+  font-size: 1em;
+}
+
+.button--large {
+  font-size: 1.25em;
+}

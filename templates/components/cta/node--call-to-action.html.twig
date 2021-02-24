@@ -22,5 +22,12 @@
 <div{{ attributes.addClass(classes) }}>
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     {{ content }}
+
+    {% include '@reboot/components/button/button.html.twig' with {
+      text: content.field_call_to_action_link.0['#title'],
+      url: content.field_call_to_action_link.0['#url'],
+      onClick: 'alert("Hi!")',
+    } only %}
+
   </div>
 </div>

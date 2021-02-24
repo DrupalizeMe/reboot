@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Button component.
+ *
+ * Variables:
+ * - text (string): The text inside the button
+ * - url (string|optional): Optional URL. When present, tag changes to an <a>
+ *   instead of a <span>.
+ * - onClick (string): Optional value for element's onClick attribute.
+ * - size (string): Button size. Options are small, medium, large.
+ */
+#}
+
+{%
+set classes = [
+  'button',
+  'button--' ~ size ?? 'medium'
+]
+%}
+
+{% set onClickAttribute = onClick ? ' onClick=' ~ onClick : '' %}
+
+{{ attach_library('reboot/component.button') }}
+
+{% if url is defined %}
+  <a href="{{ url }}" class="{{ classes|join(' ') }}"{{ onClickAttribute }}>{{ text }}</a>
+{% else %}
+  <span class="{{ classes|join(' ') }}"{{ onClickAttribute }}>{{ text }}</span>
+{% endif %}
