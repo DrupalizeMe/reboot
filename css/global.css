@@ -1,5 +1,19 @@
 /* Theme specific CSS rules */
 
+:root {
+  --color: #08f;
+  --glow-1: 0 0 1px;
+  --glow-2: 0 0 2px;
+  --glow-3: 0 0 6px;
+  --glow-4: 0 0 12px;
+}
+
+.jumbotron {
+  padding: 2em;
+  box-shadow: var(--glow-1) var(--color), var(--glow-2) var(--color), var(--glow-3) var(--color), var(--glow-4) var(--color),
+  inset var(--glow-1) var(--color), inset var(--glow-2) var(--color), inset var(--glow-3) var(--color), inset var(--glow-4) var(--color);
+}
+
 .node--type-article .field--type-image img {
   height: auto;
   min-width: 100%;
